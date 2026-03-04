@@ -191,8 +191,8 @@ export default function Sobre() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {[
                 { v: "25+", l: "Anos de Experiência", dark: true },
-                { v: "+50 MW", l: "Solares Instalados", dark: false },
-                { v: "+75", l: "Sistemas Instalados", dark: false },
+                // { v: "+50 MW", l: "Solares Instalados", dark: false },
+                // { v: "+75", l: "Sistemas Instalados", dark: false },
                 { v: "4", l: "Países · AO PT CV STP", dark: false },
               ].map((s, i) => (
                 <div key={i} style={{ background: s.dark ? "#095b66" : "#f0f9fa", border: s.dark ? "none" : "1.5px solid #c8e8eb", borderRadius: 14, padding: "28px 22px" }}>
