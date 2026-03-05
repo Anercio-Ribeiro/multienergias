@@ -19,8 +19,8 @@ const NAV_ITEMS: NavItem[] = [
   { label: "Serviços",  href: "/#servicos"                                   },
   { label: "Produtos",  href: "/produtos"                                    },
   { label: "Projectos",  href: "/projectos"                                    },
-  { label: "Catálogo",  href: "/catalogo"                                    },
-  { label: "Academy",   href: "/academy",   academy: true                    },
+  { label: "Catálogo",  href: "/"                                    },
+  { label: "Academy",   href: "/",   academy: true                    },
   { label: "Contactos", href: "/#contacto"                                   },
   { label: "WhatsApp",  href: "https://wa.me/244933153362", wa: true, external: true },
 ];
