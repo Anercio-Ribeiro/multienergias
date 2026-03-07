@@ -1,0 +1,289 @@
+// // This is your Prisma schema file,
+// // learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// // generator client {
+// //   provider = "prisma-client"
+// //   output   = "../app/generated/prisma"
+// // }
+
+// // datasource db {
+// //   provider = "postgresql"
+// // }
+
+// // prisma/schema.prisma
+// // Multienergia CMS — Neon (PostgreSQL) via Prisma
+
+// generator client {
+//   provider = "prisma-client-js"
+// }
+
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("DATABASE_URL")
+//   //directUrl = env("DIRECT_URL") 
+  
+//   // Neon requires this for migrations
+// }
+
+// // ─── HOME PAGE ───────────────────────────────────────────────────────────────
+
+// model HeroSlide {
+//   id        Int      @id @default(autoincrement())
+//   order     Int      @default(0)
+//   tag       String
+//   line1     String
+//   line2     String
+//   line3     String
+//   sub       String   @db.Text
+//   active    Boolean  @default(true)
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@map("hero_slides")
+// }
+
+// model Product {
+//   id         Int      @id @default(autoincrement())
+//   slug       String   @unique
+//   order      Int      @default(0)
+//   name       String
+//   desc       String   @db.Text
+//   color      String   // hex, e.g. "#095b66"
+//   lightColor String   // hex for background variant
+//   specs      String[] // array of spec strings
+//   brands     String[] // array of brand names
+//   active     Boolean  @default(true)
+//   createdAt  DateTime @default(now())
+//   updatedAt  DateTime @updatedAt
+
+//   @@map("products")
+// }
+
+// model Service {
+//   id         Int      @id @default(autoincrement())
+//   order      Int      @default(0)
+//   title      String
+//   short      String   @db.Text
+//   iconIndex  Int      @default(0) // maps to SVG icon set (0–9)
+//   active     Boolean  @default(true)
+//   createdAt  DateTime @default(now())
+//   updatedAt  DateTime @updatedAt
+
+//   @@map("services")
+// }
+
+// model Client {
+//   id        Int      @id @default(autoincrement())
+//   order     Int      @default(0)
+//   name      String
+//   active    Boolean  @default(true)
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@map("clients")
+// }
+
+// model Brand {
+//   id        Int      @id @default(autoincrement())
+//   order     Int      @default(0)
+//   name      String
+//   role      String
+//   logoUrl   String?  // optional logo image URL
+//   active    Boolean  @default(true)
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@map("brands")
+// }
+
+// model PresencePoint {
+//   id        Int      @id @default(autoincrement())
+//   order     Int      @default(0)
+//   name      String
+//   lon       Float
+//   lat       Float
+//   isMain    Boolean  @default(false)
+//   detail    String   @db.Text
+//   active    Boolean  @default(true)
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@map("presence_points")
+// }
+
+// model ContactOffice {
+//   id        Int      @id @default(autoincrement())
+//   order     Int      @default(0)
+//   country   String
+//   flag      String   // emoji flag, e.g. "🇦🇴"
+//   address   String   @db.Text
+//   phones    String[] // array of phone numbers
+//   email     String
+//   active    Boolean  @default(true)
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   @@map("contact_offices")
+// }
+
+// // ─── SITE-WIDE SETTINGS ──────────────────────────────────────────────────────
+
+// model SiteSetting {
+//   id        Int      @id @default(autoincrement())
+//   key       String   @unique
+//   value     String   @db.Text
+//   label     String   // human-readable label for CMS
+//   group     String   @default("general") // e.g. "general", "contact", "social"
+//   updatedAt DateTime @updatedAt
+
+//   @@map("site_settings")
+// }
+
+
+
+
+
+// prisma/schema.prisma
+// Prisma 7 — a URL é configurada no prisma.config.ts, não aqui
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── HOME PAGE ───────────────────────────────────────────────────────────────
+
+model HeroSlide {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  tag       String
+  line1     String
+  line2     String
+  line3     String
+  sub       String   @db.Text
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("hero_slides")
+}
+
+// model Product {
+//   id         Int      @id @default(autoincrement())
+//   slug       String   @unique
+//   order      Int      @default(0)
+//   name       String
+//   desc       String   @db.Text
+//   color      String
+//   lightColor String
+//   specs      String[]
+//   brands     String[]
+//   active     Boolean  @default(true)
+//   createdAt  DateTime @default(now())
+//   updatedAt  DateTime @updatedAt
+
+//   @@map("products")
+// }
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  slug      String   @unique
+  name      String
+  desc      String
+  color     String   @default("#095b66")
+  lightColor String  @default("#e8f7f9")
+  specs     String[] 
+  brands    String[]
+  iconIndex Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("products")
+}
+
+model Service {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  title     String
+  short     String   @db.Text
+  iconIndex Int      @default(0)
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("services")
+}
+
+model Client {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  name      String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("clients")
+}
+
+model Brand {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  name      String
+  role      String
+  logoUrl   String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("brands")
+}
+
+model PresencePoint {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  name      String
+  lon       Float
+  lat       Float
+  isMain    Boolean  @default(false)
+  detail    String   @db.Text
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("presence_points")
+}
+
+model ContactOffice {
+  id        Int      @id @default(autoincrement())
+  order     Int      @default(0)
+  country   String
+  flag      String
+  address   String   @db.Text
+  phones    String[]
+  email     String
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_offices")
+}
+
+model SiteSetting {
+  id        Int      @id @default(autoincrement())
+  key       String   @unique
+  value     String   @db.Text
+  label     String
+  group     String   @default("general")
+  updatedAt DateTime @updatedAt
+
+  @@map("site_settings")
+}

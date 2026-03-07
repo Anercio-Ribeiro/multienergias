@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "products" ADD COLUMN     "iconIndex" INTEGER NOT NULL DEFAULT 0,
+ALTER COLUMN "color" SET DEFAULT '#095b66',
+ALTER COLUMN "lightColor" SET DEFAULT '#e8f7f9';
