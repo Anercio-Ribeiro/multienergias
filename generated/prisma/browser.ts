@@ -28,6 +28,21 @@ export type HeroSlide = Prisma.HeroSlideModel
  */
 export type Product = Prisma.ProductModel
 /**
+ * Model PresencePoint
+ * 
+ */
+export type PresencePoint = Prisma.PresencePointModel
+/**
+ * Model ContactOffice
+ * 
+ */
+export type ContactOffice = Prisma.ContactOfficeModel
+/**
+ * Model SiteSetting
+ * 
+ */
+export type SiteSetting = Prisma.SiteSettingModel
+/**
  * Model Service
  * 
  */
@@ -43,17 +58,7 @@ export type Client = Prisma.ClientModel
  */
 export type Brand = Prisma.BrandModel
 /**
- * Model PresencePoint
+ * Model Presence
  * 
  */
-export type PresencePoint = Prisma.PresencePointModel
-/**
- * Model ContactOffice
- * 
- */
-export type ContactOffice = Prisma.ContactOfficeModel
-/**
- * Model SiteSetting
- * 
- */
-export type SiteSetting = Prisma.SiteSettingModel
+export type Presence = Prisma.PresenceModel

@@ -53,12 +53,13 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   HeroSlide: 'HeroSlide',
   Product: 'Product',
+  PresencePoint: 'PresencePoint',
+  ContactOffice: 'ContactOffice',
+  SiteSetting: 'SiteSetting',
   Service: 'Service',
   Client: 'Client',
   Brand: 'Brand',
-  PresencePoint: 'PresencePoint',
-  ContactOffice: 'ContactOffice',
-  SiteSetting: 'SiteSetting'
+  Presence: 'Presence'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -87,7 +88,8 @@ export const HeroSlideScalarFieldEnum = {
   sub: 'sub',
   active: 'active',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  image: 'image'
 } as const
 
 export type HeroSlideScalarFieldEnum = (typeof HeroSlideScalarFieldEnum)[keyof typeof HeroSlideScalarFieldEnum]
@@ -105,50 +107,11 @@ export const ProductScalarFieldEnum = {
   brands: 'brands',
   active: 'active',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  iconIndex: 'iconIndex'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
-
-
-export const ServiceScalarFieldEnum = {
-  id: 'id',
-  order: 'order',
-  title: 'title',
-  short: 'short',
-  iconIndex: 'iconIndex',
-  active: 'active',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
-
-
-export const ClientScalarFieldEnum = {
-  id: 'id',
-  order: 'order',
-  name: 'name',
-  active: 'active',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ClientScalarFieldEnum = (typeof ClientScalarFieldEnum)[keyof typeof ClientScalarFieldEnum]
-
-
-export const BrandScalarFieldEnum = {
-  id: 'id',
-  order: 'order',
-  name: 'name',
-  role: 'role',
-  logoUrl: 'logoUrl',
-  active: 'active',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type BrandScalarFieldEnum = (typeof BrandScalarFieldEnum)[keyof typeof BrandScalarFieldEnum]
 
 
 export const PresencePointScalarFieldEnum = {
@@ -193,6 +156,62 @@ export const SiteSettingScalarFieldEnum = {
 } as const
 
 export type SiteSettingScalarFieldEnum = (typeof SiteSettingScalarFieldEnum)[keyof typeof SiteSettingScalarFieldEnum]
+
+
+export const ServiceScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  title: 'title',
+  short: 'short',
+  iconIndex: 'iconIndex',
+  active: 'active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ServiceScalarFieldEnum = (typeof ServiceScalarFieldEnum)[keyof typeof ServiceScalarFieldEnum]
+
+
+export const ClientScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  name: 'name',
+  active: 'active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ClientScalarFieldEnum = (typeof ClientScalarFieldEnum)[keyof typeof ClientScalarFieldEnum]
+
+
+export const BrandScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  name: 'name',
+  role: 'role',
+  active: 'active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type BrandScalarFieldEnum = (typeof BrandScalarFieldEnum)[keyof typeof BrandScalarFieldEnum]
+
+
+export const PresenceScalarFieldEnum = {
+  id: 'id',
+  order: 'order',
+  name: 'name',
+  lon: 'lon',
+  lat: 'lat',
+  main: 'main',
+  detail: 'detail',
+  flag: 'flag',
+  active: 'active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type PresenceScalarFieldEnum = (typeof PresenceScalarFieldEnum)[keyof typeof PresenceScalarFieldEnum]
 
 
 export const SortOrder = {

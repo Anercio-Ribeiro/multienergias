@@ -47,6 +47,7 @@ export type HeroSlideMinAggregateOutputType = {
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  image: string | null
 }
 
 export type HeroSlideMaxAggregateOutputType = {
@@ -60,6 +61,7 @@ export type HeroSlideMaxAggregateOutputType = {
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  image: string | null
 }
 
 export type HeroSlideCountAggregateOutputType = {
@@ -73,6 +75,7 @@ export type HeroSlideCountAggregateOutputType = {
   active: number
   createdAt: number
   updatedAt: number
+  image: number
   _all: number
 }
 
@@ -98,6 +101,7 @@ export type HeroSlideMinAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  image?: true
 }
 
 export type HeroSlideMaxAggregateInputType = {
@@ -111,6 +115,7 @@ export type HeroSlideMaxAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  image?: true
 }
 
 export type HeroSlideCountAggregateInputType = {
@@ -124,6 +129,7 @@ export type HeroSlideCountAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  image?: true
   _all?: true
 }
 
@@ -224,6 +230,7 @@ export type HeroSlideGroupByOutputType = {
   active: boolean
   createdAt: Date
   updatedAt: Date
+  image: string | null
   _count: HeroSlideCountAggregateOutputType | null
   _avg: HeroSlideAvgAggregateOutputType | null
   _sum: HeroSlideSumAggregateOutputType | null
@@ -260,6 +267,7 @@ export type HeroSlideWhereInput = {
   active?: Prisma.BoolFilter<"HeroSlide"> | boolean
   createdAt?: Prisma.DateTimeFilter<"HeroSlide"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"HeroSlide"> | Date | string
+  image?: Prisma.StringNullableFilter<"HeroSlide"> | string | null
 }
 
 export type HeroSlideOrderByWithRelationInput = {
@@ -273,6 +281,7 @@ export type HeroSlideOrderByWithRelationInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
 }
 
 export type HeroSlideWhereUniqueInput = Prisma.AtLeast<{
@@ -289,6 +298,7 @@ export type HeroSlideWhereUniqueInput = Prisma.AtLeast<{
   active?: Prisma.BoolFilter<"HeroSlide"> | boolean
   createdAt?: Prisma.DateTimeFilter<"HeroSlide"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"HeroSlide"> | Date | string
+  image?: Prisma.StringNullableFilter<"HeroSlide"> | string | null
 }, "id">
 
 export type HeroSlideOrderByWithAggregationInput = {
@@ -302,6 +312,7 @@ export type HeroSlideOrderByWithAggregationInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  image?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.HeroSlideCountOrderByAggregateInput
   _avg?: Prisma.HeroSlideAvgOrderByAggregateInput
   _max?: Prisma.HeroSlideMaxOrderByAggregateInput
@@ -323,10 +334,11 @@ export type HeroSlideScalarWhereWithAggregatesInput = {
   active?: Prisma.BoolWithAggregatesFilter<"HeroSlide"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"HeroSlide"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"HeroSlide"> | Date | string
+  image?: Prisma.StringNullableWithAggregatesFilter<"HeroSlide"> | string | null
 }
 
 export type HeroSlideCreateInput = {
-  order?: number
+  order: number
   tag: string
   line1: string
   line2: string
@@ -335,11 +347,12 @@ export type HeroSlideCreateInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  image?: string | null
 }
 
 export type HeroSlideUncheckedCreateInput = {
   id?: number
-  order?: number
+  order: number
   tag: string
   line1: string
   line2: string
@@ -348,6 +361,7 @@ export type HeroSlideUncheckedCreateInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  image?: string | null
 }
 
 export type HeroSlideUpdateInput = {
@@ -360,6 +374,7 @@ export type HeroSlideUpdateInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type HeroSlideUncheckedUpdateInput = {
@@ -373,11 +388,12 @@ export type HeroSlideUncheckedUpdateInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type HeroSlideCreateManyInput = {
   id?: number
-  order?: number
+  order: number
   tag: string
   line1: string
   line2: string
@@ -386,6 +402,7 @@ export type HeroSlideCreateManyInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  image?: string | null
 }
 
 export type HeroSlideUpdateManyMutationInput = {
@@ -398,6 +415,7 @@ export type HeroSlideUpdateManyMutationInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type HeroSlideUncheckedUpdateManyInput = {
@@ -411,6 +429,7 @@ export type HeroSlideUncheckedUpdateManyInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type HeroSlideCountOrderByAggregateInput = {
@@ -424,6 +443,7 @@ export type HeroSlideCountOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  image?: Prisma.SortOrder
 }
 
 export type HeroSlideAvgOrderByAggregateInput = {
@@ -442,6 +462,7 @@ export type HeroSlideMaxOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  image?: Prisma.SortOrder
 }
 
 export type HeroSlideMinOrderByAggregateInput = {
@@ -455,6 +476,7 @@ export type HeroSlideMinOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  image?: Prisma.SortOrder
 }
 
 export type HeroSlideSumOrderByAggregateInput = {
@@ -482,6 +504,10 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
 }
 
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
+}
+
 
 
 export type HeroSlideSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -495,6 +521,7 @@ export type HeroSlideSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  image?: boolean
 }, ExtArgs["result"]["heroSlide"]>
 
 export type HeroSlideSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -508,6 +535,7 @@ export type HeroSlideSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  image?: boolean
 }, ExtArgs["result"]["heroSlide"]>
 
 export type HeroSlideSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -521,6 +549,7 @@ export type HeroSlideSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  image?: boolean
 }, ExtArgs["result"]["heroSlide"]>
 
 export type HeroSlideSelectScalar = {
@@ -534,9 +563,10 @@ export type HeroSlideSelectScalar = {
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  image?: boolean
 }
 
-export type HeroSlideOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "order" | "tag" | "line1" | "line2" | "line3" | "sub" | "active" | "createdAt" | "updatedAt", ExtArgs["result"]["heroSlide"]>
+export type HeroSlideOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "order" | "tag" | "line1" | "line2" | "line3" | "sub" | "active" | "createdAt" | "updatedAt" | "image", ExtArgs["result"]["heroSlide"]>
 
 export type $HeroSlidePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "HeroSlide"
@@ -552,6 +582,7 @@ export type $HeroSlidePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     active: boolean
     createdAt: Date
     updatedAt: Date
+    image: string | null
   }, ExtArgs["result"]["heroSlide"]>
   composites: {}
 }
@@ -985,6 +1016,7 @@ export interface HeroSlideFieldRefs {
   readonly active: Prisma.FieldRef<"HeroSlide", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"HeroSlide", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"HeroSlide", 'DateTime'>
+  readonly image: Prisma.FieldRef<"HeroSlide", 'String'>
 }
     
 

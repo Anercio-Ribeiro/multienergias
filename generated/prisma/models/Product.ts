@@ -29,11 +29,13 @@ export type AggregateProduct = {
 export type ProductAvgAggregateOutputType = {
   id: number | null
   order: number | null
+  iconIndex: number | null
 }
 
 export type ProductSumAggregateOutputType = {
   id: number | null
   order: number | null
+  iconIndex: number | null
 }
 
 export type ProductMinAggregateOutputType = {
@@ -47,6 +49,7 @@ export type ProductMinAggregateOutputType = {
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  iconIndex: number | null
 }
 
 export type ProductMaxAggregateOutputType = {
@@ -60,6 +63,7 @@ export type ProductMaxAggregateOutputType = {
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
+  iconIndex: number | null
 }
 
 export type ProductCountAggregateOutputType = {
@@ -75,6 +79,7 @@ export type ProductCountAggregateOutputType = {
   active: number
   createdAt: number
   updatedAt: number
+  iconIndex: number
   _all: number
 }
 
@@ -82,11 +87,13 @@ export type ProductCountAggregateOutputType = {
 export type ProductAvgAggregateInputType = {
   id?: true
   order?: true
+  iconIndex?: true
 }
 
 export type ProductSumAggregateInputType = {
   id?: true
   order?: true
+  iconIndex?: true
 }
 
 export type ProductMinAggregateInputType = {
@@ -100,6 +107,7 @@ export type ProductMinAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  iconIndex?: true
 }
 
 export type ProductMaxAggregateInputType = {
@@ -113,6 +121,7 @@ export type ProductMaxAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  iconIndex?: true
 }
 
 export type ProductCountAggregateInputType = {
@@ -128,6 +137,7 @@ export type ProductCountAggregateInputType = {
   active?: true
   createdAt?: true
   updatedAt?: true
+  iconIndex?: true
   _all?: true
 }
 
@@ -230,6 +240,7 @@ export type ProductGroupByOutputType = {
   active: boolean
   createdAt: Date
   updatedAt: Date
+  iconIndex: number
   _count: ProductCountAggregateOutputType | null
   _avg: ProductAvgAggregateOutputType | null
   _sum: ProductSumAggregateOutputType | null
@@ -268,6 +279,7 @@ export type ProductWhereInput = {
   active?: Prisma.BoolFilter<"Product"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Product"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Product"> | Date | string
+  iconIndex?: Prisma.IntFilter<"Product"> | number
 }
 
 export type ProductOrderByWithRelationInput = {
@@ -283,14 +295,15 @@ export type ProductOrderByWithRelationInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  slug?: string
   AND?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
   OR?: Prisma.ProductWhereInput[]
   NOT?: Prisma.ProductWhereInput | Prisma.ProductWhereInput[]
+  slug?: Prisma.StringFilter<"Product"> | string
   order?: Prisma.IntFilter<"Product"> | number
   name?: Prisma.StringFilter<"Product"> | string
   desc?: Prisma.StringFilter<"Product"> | string
@@ -301,7 +314,8 @@ export type ProductWhereUniqueInput = Prisma.AtLeast<{
   active?: Prisma.BoolFilter<"Product"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Product"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Product"> | Date | string
-}, "id" | "slug">
+  iconIndex?: Prisma.IntFilter<"Product"> | number
+}, "id">
 
 export type ProductOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -316,6 +330,7 @@ export type ProductOrderByWithAggregationInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
   _count?: Prisma.ProductCountOrderByAggregateInput
   _avg?: Prisma.ProductAvgOrderByAggregateInput
   _max?: Prisma.ProductMaxOrderByAggregateInput
@@ -339,11 +354,12 @@ export type ProductScalarWhereWithAggregatesInput = {
   active?: Prisma.BoolWithAggregatesFilter<"Product"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Product"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Product"> | Date | string
+  iconIndex?: Prisma.IntWithAggregatesFilter<"Product"> | number
 }
 
 export type ProductCreateInput = {
   slug: string
-  order?: number
+  order: number
   name: string
   desc: string
   color: string
@@ -353,12 +369,13 @@ export type ProductCreateInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  iconIndex: number
 }
 
 export type ProductUncheckedCreateInput = {
   id?: number
   slug: string
-  order?: number
+  order: number
   name: string
   desc: string
   color: string
@@ -368,6 +385,7 @@ export type ProductUncheckedCreateInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  iconIndex: number
 }
 
 export type ProductUpdateInput = {
@@ -382,6 +400,7 @@ export type ProductUpdateInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  iconIndex?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type ProductUncheckedUpdateInput = {
@@ -397,12 +416,13 @@ export type ProductUncheckedUpdateInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  iconIndex?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type ProductCreateManyInput = {
   id?: number
   slug: string
-  order?: number
+  order: number
   name: string
   desc: string
   color: string
@@ -412,6 +432,7 @@ export type ProductCreateManyInput = {
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
+  iconIndex: number
 }
 
 export type ProductUpdateManyMutationInput = {
@@ -426,6 +447,7 @@ export type ProductUpdateManyMutationInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  iconIndex?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type ProductUncheckedUpdateManyInput = {
@@ -441,6 +463,7 @@ export type ProductUncheckedUpdateManyInput = {
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  iconIndex?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type StringNullableListFilter<$PrismaModel = never> = {
@@ -464,11 +487,13 @@ export type ProductCountOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductMaxOrderByAggregateInput = {
@@ -482,6 +507,7 @@ export type ProductMaxOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductMinOrderByAggregateInput = {
@@ -495,11 +521,13 @@ export type ProductMinOrderByAggregateInput = {
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   order?: Prisma.SortOrder
+  iconIndex?: Prisma.SortOrder
 }
 
 export type ProductCreatespecsInput = {
@@ -535,6 +563,7 @@ export type ProductSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  iconIndex?: boolean
 }, ExtArgs["result"]["product"]>
 
 export type ProductSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -550,6 +579,7 @@ export type ProductSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  iconIndex?: boolean
 }, ExtArgs["result"]["product"]>
 
 export type ProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -565,6 +595,7 @@ export type ProductSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  iconIndex?: boolean
 }, ExtArgs["result"]["product"]>
 
 export type ProductSelectScalar = {
@@ -580,9 +611,10 @@ export type ProductSelectScalar = {
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  iconIndex?: boolean
 }
 
-export type ProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "order" | "name" | "desc" | "color" | "lightColor" | "specs" | "brands" | "active" | "createdAt" | "updatedAt", ExtArgs["result"]["product"]>
+export type ProductOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "order" | "name" | "desc" | "color" | "lightColor" | "specs" | "brands" | "active" | "createdAt" | "updatedAt" | "iconIndex", ExtArgs["result"]["product"]>
 
 export type $ProductPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Product"
@@ -600,6 +632,7 @@ export type $ProductPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     active: boolean
     createdAt: Date
     updatedAt: Date
+    iconIndex: number
   }, ExtArgs["result"]["product"]>
   composites: {}
 }
@@ -1035,6 +1068,7 @@ export interface ProductFieldRefs {
   readonly active: Prisma.FieldRef<"Product", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Product", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Product", 'DateTime'>
+  readonly iconIndex: Prisma.FieldRef<"Product", 'Int'>
 }
     
 

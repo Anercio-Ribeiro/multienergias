@@ -10,16 +10,16 @@ export async function GET() {
   return NextResponse.json(products);
 }
 
-// export async function POST(req: NextRequest) {
-//   const data = await req.json();
-//   const product = await prisma.product.create({ data });
-//   return NextResponse.json(product, { status: 201 });
-// }
-
-
 export async function POST(req: NextRequest) {
   const data = await req.json();
-  const { iconIndex, ...productData } = data; // strip the unknown field
-  const product = await prisma.product.create({ data: productData });
+  const product = await prisma.product.create({ data });
   return NextResponse.json(product, { status: 201 });
 }
+
+
+// export async function POST(req: NextRequest) {
+//   const data = await req.json();
+//   const { iconIndex, ...productData } = data; // strip the unknown field
+//   const product = await prisma.product.create({ data: productData });
+//   return NextResponse.json(product, { status: 201 });
+// }

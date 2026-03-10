@@ -41,7 +41,6 @@ export type BrandMinAggregateOutputType = {
   order: number | null
   name: string | null
   role: string | null
-  logoUrl: string | null
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -52,7 +51,6 @@ export type BrandMaxAggregateOutputType = {
   order: number | null
   name: string | null
   role: string | null
-  logoUrl: string | null
   active: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
@@ -63,7 +61,6 @@ export type BrandCountAggregateOutputType = {
   order: number
   name: number
   role: number
-  logoUrl: number
   active: number
   createdAt: number
   updatedAt: number
@@ -86,7 +83,6 @@ export type BrandMinAggregateInputType = {
   order?: true
   name?: true
   role?: true
-  logoUrl?: true
   active?: true
   createdAt?: true
   updatedAt?: true
@@ -97,7 +93,6 @@ export type BrandMaxAggregateInputType = {
   order?: true
   name?: true
   role?: true
-  logoUrl?: true
   active?: true
   createdAt?: true
   updatedAt?: true
@@ -108,7 +103,6 @@ export type BrandCountAggregateInputType = {
   order?: true
   name?: true
   role?: true
-  logoUrl?: true
   active?: true
   createdAt?: true
   updatedAt?: true
@@ -206,7 +200,6 @@ export type BrandGroupByOutputType = {
   order: number
   name: string
   role: string
-  logoUrl: string | null
   active: boolean
   createdAt: Date
   updatedAt: Date
@@ -240,7 +233,6 @@ export type BrandWhereInput = {
   order?: Prisma.IntFilter<"Brand"> | number
   name?: Prisma.StringFilter<"Brand"> | string
   role?: Prisma.StringFilter<"Brand"> | string
-  logoUrl?: Prisma.StringNullableFilter<"Brand"> | string | null
   active?: Prisma.BoolFilter<"Brand"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Brand"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Brand"> | Date | string
@@ -251,7 +243,6 @@ export type BrandOrderByWithRelationInput = {
   order?: Prisma.SortOrder
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -265,7 +256,6 @@ export type BrandWhereUniqueInput = Prisma.AtLeast<{
   order?: Prisma.IntFilter<"Brand"> | number
   name?: Prisma.StringFilter<"Brand"> | string
   role?: Prisma.StringFilter<"Brand"> | string
-  logoUrl?: Prisma.StringNullableFilter<"Brand"> | string | null
   active?: Prisma.BoolFilter<"Brand"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Brand"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Brand"> | Date | string
@@ -276,7 +266,6 @@ export type BrandOrderByWithAggregationInput = {
   order?: Prisma.SortOrder
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -295,7 +284,6 @@ export type BrandScalarWhereWithAggregatesInput = {
   order?: Prisma.IntWithAggregatesFilter<"Brand"> | number
   name?: Prisma.StringWithAggregatesFilter<"Brand"> | string
   role?: Prisma.StringWithAggregatesFilter<"Brand"> | string
-  logoUrl?: Prisma.StringNullableWithAggregatesFilter<"Brand"> | string | null
   active?: Prisma.BoolWithAggregatesFilter<"Brand"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Brand"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Brand"> | Date | string
@@ -305,7 +293,6 @@ export type BrandCreateInput = {
   order?: number
   name: string
   role: string
-  logoUrl?: string | null
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -316,7 +303,6 @@ export type BrandUncheckedCreateInput = {
   order?: number
   name: string
   role: string
-  logoUrl?: string | null
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -326,7 +312,6 @@ export type BrandUpdateInput = {
   order?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
-  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -337,7 +322,6 @@ export type BrandUncheckedUpdateInput = {
   order?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
-  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -348,7 +332,6 @@ export type BrandCreateManyInput = {
   order?: number
   name: string
   role: string
-  logoUrl?: string | null
   active?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
@@ -358,7 +341,6 @@ export type BrandUpdateManyMutationInput = {
   order?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
-  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -369,7 +351,6 @@ export type BrandUncheckedUpdateManyInput = {
   order?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.StringFieldUpdateOperationsInput | string
-  logoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   active?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -380,7 +361,6 @@ export type BrandCountOrderByAggregateInput = {
   order?: Prisma.SortOrder
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrder
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -396,7 +376,6 @@ export type BrandMaxOrderByAggregateInput = {
   order?: Prisma.SortOrder
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrder
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -407,7 +386,6 @@ export type BrandMinOrderByAggregateInput = {
   order?: Prisma.SortOrder
   name?: Prisma.SortOrder
   role?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrder
   active?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
@@ -418,10 +396,6 @@ export type BrandSumOrderByAggregateInput = {
   order?: Prisma.SortOrder
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
 
 
 export type BrandSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -429,7 +403,6 @@ export type BrandSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   order?: boolean
   name?: boolean
   role?: boolean
-  logoUrl?: boolean
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -440,7 +413,6 @@ export type BrandSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   order?: boolean
   name?: boolean
   role?: boolean
-  logoUrl?: boolean
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -451,7 +423,6 @@ export type BrandSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   order?: boolean
   name?: boolean
   role?: boolean
-  logoUrl?: boolean
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
@@ -462,13 +433,12 @@ export type BrandSelectScalar = {
   order?: boolean
   name?: boolean
   role?: boolean
-  logoUrl?: boolean
   active?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type BrandOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "order" | "name" | "role" | "logoUrl" | "active" | "createdAt" | "updatedAt", ExtArgs["result"]["brand"]>
+export type BrandOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "order" | "name" | "role" | "active" | "createdAt" | "updatedAt", ExtArgs["result"]["brand"]>
 
 export type $BrandPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Brand"
@@ -478,7 +448,6 @@ export type $BrandPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     order: number
     name: string
     role: string
-    logoUrl: string | null
     active: boolean
     createdAt: Date
     updatedAt: Date
@@ -909,7 +878,6 @@ export interface BrandFieldRefs {
   readonly order: Prisma.FieldRef<"Brand", 'Int'>
   readonly name: Prisma.FieldRef<"Brand", 'String'>
   readonly role: Prisma.FieldRef<"Brand", 'String'>
-  readonly logoUrl: Prisma.FieldRef<"Brand", 'String'>
   readonly active: Prisma.FieldRef<"Brand", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Brand", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Brand", 'DateTime'>
