@@ -203,7 +203,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="nb-logo">
             <Image
-              src="/logo.svg"
+              src="/Multienergia.png"
               alt="Soluções Eléctricas e Energéticas"
               width={220}
               height={40}
