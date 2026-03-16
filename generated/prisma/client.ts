@@ -52,6 +52,11 @@ export type HeroSlide = Prisma.HeroSlideModel
  */
 export type Product = Prisma.ProductModel
 /**
+ * Model Category
+ * 
+ */
+export type Category = Prisma.CategoryModel
+/**
  * Model PresencePoint
  * 
  */

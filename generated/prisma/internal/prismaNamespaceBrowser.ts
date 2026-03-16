@@ -53,6 +53,7 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   HeroSlide: 'HeroSlide',
   Product: 'Product',
+  Category: 'Category',
   PresencePoint: 'PresencePoint',
   ContactOffice: 'ContactOffice',
   SiteSetting: 'SiteSetting',
@@ -108,10 +109,29 @@ export const ProductScalarFieldEnum = {
   active: 'active',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  iconIndex: 'iconIndex'
+  iconIndex: 'iconIndex',
+  category: 'category',
+  highlights: 'highlights',
+  image: 'image',
+  longDesc: 'longDesc'
 } as const
 
 export type ProductScalarFieldEnum = (typeof ProductScalarFieldEnum)[keyof typeof ProductScalarFieldEnum]
+
+
+export const CategoryScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  brands: 'brands',
+  active: 'active',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  iconIndex: 'iconIndex',
+  description: 'description',
+  image: 'image'
+} as const
+
+export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
 
 
 export const PresencePointScalarFieldEnum = {
@@ -222,6 +242,13 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
+
+
 export const QueryMode = {
   default: 'default',
   insensitive: 'insensitive'
@@ -236,4 +263,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

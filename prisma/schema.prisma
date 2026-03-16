@@ -25,20 +25,38 @@ model HeroSlide {
 
 model Product {
   id         Int      @id @default(autoincrement())
-  slug       String
-  order      Int
+  slug       String   @unique
+  order      Int      @default(0)
   name       String
   desc       String
-  color      String
-  lightColor String
+  color      String   @default("#095b66")
+  lightColor String   @default("#e8f7f9")
   specs      String[]
   brands     String[]
   active     Boolean  @default(true)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  iconIndex  Int
+  iconIndex  Int      @default(0)
+  category   String   @default("")
+  highlights Json     @default("[]")
+  image      String?
+  longDesc   String   @default("")
 
   @@map("products")
+}
+
+model Category {
+  id          Int      @id @default(autoincrement())
+  title       String
+  brands      String[]
+  active      Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  iconIndex   Int
+  description String
+  image       String?
+
+  @@map("categories")
 }
 
 model PresencePoint {
@@ -130,4 +148,6 @@ model Presence {
   active    Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("presences")
 }

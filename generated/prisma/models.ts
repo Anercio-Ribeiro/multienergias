@@ -10,6 +10,7 @@
  */
 export type * from './models/HeroSlide'
 export type * from './models/Product'
+export type * from './models/Category'
 export type * from './models/PresencePoint'
 export type * from './models/ContactOffice'
 export type * from './models/SiteSetting'
